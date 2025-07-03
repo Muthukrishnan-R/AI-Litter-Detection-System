@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Past Detections{% endblock %}
+
+{% block extra_css %}
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='past_detections.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="past-detections-wrapper">
+  <!-- Header -->
+  <div class="past-detections-header">
+    <h1>Past Detections</h1>
+    <p>Here are the past detections recorded.</p>
+  </div>
+
+  <!-- Table Container -->
+  <div class="table-container">
+    <table class="past-detections-table">
+      <thead>
+        <tr>
+          <th>License Plate</th>
+          <th>Suspect Name</th>
+          <th>Timestamp</th>
+          <th>Detected Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for detection in detections %}
+        <tr>
+          <td>{{ detection.license_plate }}</td>
+          <td>{{ detection.suspect_name }}</td>
+          <td>{{ detection.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+          <td>
+            <img src="{{ url_for('static', filename=detection.image_path.split('static/')[1]) }}" alt="Detection Image">
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+  <!-- Page-specific JavaScript -->
+  <script src="{{ url_for('static', filename='past_detections.js') }}"></script>
+{% endblock %}

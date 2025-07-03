@@ -1,0 +1,36 @@
+<!-- Sidebar -->
+<aside class="main-sidebar">
+  <div class="sidebar-menu">
+
+    <h1 style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; color: #4CAF50; text-align: center; margin-bottom: 20px;">
+      <span style="color: #FFC107;">Eco</span><span style="color: #2196F3;">Scan</span>
+    </h1>
+    <img src="{{ url_for('static', filename='logo.jpg') }}" width="190px" style="border-radius: 10px; padding:5px;">
+
+    <a href="{{ url_for('home') }}" class="menu-item" data-page="home">
+      <div class="menu-icon home-icon" style="text-align: left;">🏠</div>
+      <div class="menu-text">Home</div>
+    </a>
+    <a href="{{ url_for('index') }}" class="menu-item" data-page="dashboard">
+      <div class="menu-icon dashboard-icon">📊</div>
+      <div class="menu-text">Dashboard</div>
+    </a>
+    <a href="{{ url_for('past_detections') }}" class="menu-item" data-page="past-predictions">
+      <div class="menu-icon predictions-icon">📜</div>
+      <div class="menu-text">Detection Logs</div>
+    </a>
+    <a href="{{ url_for('contact') }}" class="menu-item" data-page="contact">
+      <div class="menu-icon contact-icon">✉️</div>
+      <div class="menu-text">Contact Us</div>
+    </a>
+    <a href="{{ url_for('about') }}" class="menu-item" data-page="about">
+      <div class="menu-icon about-icon">ℹ️</div>
+      <div class="menu-text">About Us</div>
+    </a>
+    <a href="{{ url_for('logout') }}" >
+      <button style="background-color: red; padding:15px; border-radius: 10px; margin-top: 40%;">
+        Logout
+      </button>
+    </a>
+  </div>
+</aside>

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="/static/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="/static/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="/static/assets/plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="/static/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="/static/assets/plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="/static/assets/plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Sidebar Styles -->
+<link rel="stylesheet" href="{{ url_for('static', filename='sidebar.css') }}">
+
+
+<!-- Sidebar JS -->
+<script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+
+
+
+
+  <style>
+    .card {
+      transition: transform 0.3s ease-in-out;
+      min-height: 300px; /* Adjust as needed */
+      flex: 1; 
+    }
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  }
+    .col-lg-6 {
+  display: flex;
+}
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .dashboard-header {
+      background: linear-gradient(to bottom right, #FF7F00, #FFCC00);
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+{% endblock stylesheets %}
+
+{% block content %}
+  <div class="content-wrapper">
+    <div class="dashboard-header shadow-lg">Litter Detection Dashboard</div>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card shadow-lg">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    <i class="fas fa-upload mr-1"></i> Upload an Image
+                  </h3>
+                </div>
+                <div class="card-body text-center">
+                  <form method="post" enctype="multipart/form-data" name="form1" action="{{ url_for('predict') }}">
+                    <input type="file" name="image" class="form-control-file" id="inputfile" onchange="validateFileInput(this)">
+                    <br/><br/>
+                    <button class="btn btn-primary btn-lg" type="submit" id="uploadButton" disabled>Upload</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-lg-6">
+              <div class="card shadow-lg">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    <i class="fas fa-image mr-1"></i> Detection Results
+                  </h3>
+                </div>
+                <div class="card-body text-center">
+                  {% if flag %}
+                    <h4><b>{{ prediction }}</b></h4>
+                    <img id="my-image" src="{{ image }}" class="img-fluid rounded" style="display: none;"/>
+                    <script>
+                      document.getElementById("my-image").onload = function() {
+                        this.style.display = "block";
+                      };
+                    </script>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock content %}
+
+{% block javascripts %}
+  <script>
+    function validateFileInput(inputElement) {
+        const uploadButton = document.getElementById('uploadButton');
+        uploadButton.disabled = !inputElement.files.length;
+    }
+  </script>
+{% endblock javascripts %}

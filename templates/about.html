@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Litter Detection{% endblock %}
+
+{% block stylesheets %}
+  <!-- Page-specific styles for About page -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="about-container">
+    <!-- Header -->
+    <header class="about-header">
+      <h1>About Us</h1>
+      <p>Discover the story behind Litter Detection and our mission to create a cleaner world.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="about-content">
+      <!-- Vision Section -->
+      <section class="about-section vision-section">
+        <div class="section-icon">
+          <i class="fas fa-binoculars"></i>
+        </div>
+        <h2>Our Vision</h2>
+        <p>We envision a world where technology and environmental consciousness work hand in hand to create cleaner, healthier communities.</p>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="about-section works-section">
+        <div class="section-icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h2>How It Works</h2>
+        <p>Our AI-powered system detects litter in real-time, providing actionable insights to help you take action against pollution.</p>
+      </section>
+
+      <!-- Features Section -->
+      <section class="about-section features-section">
+        <div class="section-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <h2>Key Features</h2>
+        <ul>
+          <li>Real-Time Detection</li>
+          <li>Accurate Classification</li>
+          <li>User-Friendly Interface</li>
+          <li>Data-Driven Insights</li>
+        </ul>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="about-section cta-section">
+        <h2>Join Us in Making a Difference</h2>
+        <p>Together, we can create a cleaner, greener world. Start using Litter Detection today!</p>
+        <a href="{{ url_for('index') }}" class="cta-button">Get Started</a>
+      </section>
+    </main>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  <!-- Page-specific scripts for About page -->
+  <script src="{{ url_for('static', filename='about.js') }}"></script>
+{% endblock %}

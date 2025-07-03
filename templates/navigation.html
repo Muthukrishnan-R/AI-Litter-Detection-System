@@ -1,0 +1,31 @@
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <!-- Left navbar links -->
+  <ul class="navbar-nav">
+      
+      
+      
+
+      <!-- ✅ Add class="nav-link" to Home and Dashboard -->
+      <li class="nav-item d-none d-sm-inline-block">
+          <a href="{{ url_for('home')}}" class="nav-link">Home</a>
+      </li>
+      
+      <li class="nav-item d-none d-sm-inline-block">
+          <a href="{{ url_for('index')}}" class="nav-link">Dashboard</a>
+      </li>
+
+      <li class="nav-item d-none d-sm-inline-block">
+          <a href="{{url_for('past_detections')}}" class="nav-link">Past Detection</a>
+      </li>
+
+      <li class="nav-item d-none d-sm-inline-block">
+          <a href="{{url_for('contact')}}" class="nav-link">Contact Us</a>
+      </li>
+
+      <li class="nav-item d-none d-sm-inline-block">
+          <a href="{{url_for('about')}}" class="nav-link">About Us</a>
+      </li>
+  </ul>
+</nav>
+<!-- /.navbar -->

@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='sidebar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <!-- Animate.css for animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+{% endblock %}
+
+{% block content %}
+<header>
+    <nav class="top-nav">
+        <div class="logo-container">
+            <span class="logo">&#128247;</span> 
+            <span class="site-name">Litter Detection System</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content animate__animated animate__fadeIn">
+        <h1>Littering Detection System</h1>
+        <p>Keeping our communities clean with advanced artificial intelligence</p>
+        <a href="{{ url_for('index') }}" class="btn">Get Started</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <h2 class="animate__animated animate__fadeInUp">Why Choose Us?</h2>
+    <div class="feature-grid">
+        <div class="feature-card animate__animated animate__fadeInLeft">
+            <span class="feature-icon">&#128228;</span>
+            <h3>Upload Images</h3>
+            <p>Upload images of littered areas for instant AI analysis</p>
+        </div>
+        <div class="feature-card animate__animated animate__fadeInUp">
+            <span class="feature-icon">&#128248;</span>
+            <h3>Real-time Detection</h3>
+            <p>Advanced AI algorithms detect and classify litter in real-time</p>
+        </div>
+        <div class="feature-card animate__animated animate__fadeInRight">
+            <span class="feature-icon">&#128202;</span>
+            <h3>Analytics Dashboard</h3>
+            <p>Comprehensive analytics and reporting of litter detection</p>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works">
+    <h2 class="animate__animated animate__fadeInUp">How It Works</h2>
+    <div class="steps">
+        <div class="step animate__animated animate__fadeInLeft">
+            <span class="step-number">1</span>
+            <h3>Upload an Image</h3>
+            <p>Upload an image of a littered area from your device.</p>
+        </div>
+        <div class="step animate__animated animate__fadeInUp">
+            <span class="step-number">2</span>
+            <h3>AI Analysis</h3>
+            <p>Our AI analyzes the image to detect and classify litter.</p>
+        </div>
+        <div class="step animate__animated animate__fadeInRight">
+            <span class="step-number">3</span>
+            <h3>Get Results</h3>
+            <p>Receive detailed insights and actionable recommendations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta">
+    <h2 class="animate__animated animate__fadeInUp">Ready to Make a Difference?</h2>
+    <p class="animate__animated animate__fadeInUp">Join us in creating cleaner, greener communities.</p>
+    <a href="{{ url_for('index') }}" class="btn animate__animated animate__pulse animate__infinite">Start Now</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2023 Litter Detection System. All rights reserved.</p>
+</footer>
+{% endblock %}
+
+{% block javascripts %}
+  <script src="{{ url_for('static', filename='sidebar.js') }}"></script>
+  <script src="{{ url_for('static', filename='home.js') }}"></script>
+  <!-- ScrollReveal for animations on scroll -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+{% endblock %}

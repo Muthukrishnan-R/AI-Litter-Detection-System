@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Litter Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Background Animation */
+        body {
+            background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 300% 300%;
+            animation: moveBackground 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes moveBackground {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Glassmorphism Effect */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Input Fields */
+        .input-box {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+        }
+        .input-box::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Button Hover Effect */
+        .login-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen text-white">
+
+    <div class="glass-box w-96 text-center">
+        <h1 class="text-4xl font-extrabold">Litter Detection</h1>
+        <p class="text-gray-300 mt-2">Admin Login</p>
+
+        {% if error %}
+        <p class="text-red-400 mt-3">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST" action="{{ url_for('login') }}" class="mt-6 space-y-4">
+            <div class="relative">
+                <input type="text" name="username" placeholder="Admin ID" required
+                    class="w-full p-3 input-box rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            </div>
+
+            <div class="relative">
+                <input type="password" name="password" placeholder="Password" required
+                    class="w-full p-3 input-box rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            </div>
+
+            <button type="submit"
+                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-lg transition login-btn text-lg font-semibold">
+                Login
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

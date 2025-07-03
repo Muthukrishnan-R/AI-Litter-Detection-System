@@ -1,0 +1,106 @@
+/* About Page Specific Styles */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header */
+  .about-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #FF7F00, #FFCC00);
+    color: #fff;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .about-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .about-header p {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  /* Sections */
+  .about-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .section-icon {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FF7F00;
+    margin-bottom: 20px;
+  }
+  
+  .about-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FF7F00;
+    margin-bottom: 15px;
+  }
+  
+  .about-section p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .about-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-section ul li {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  /* Call to Action */
+  .cta-section {
+    text-align: center;
+    background: #FF7F00;
+    color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+  }
+  
+  .cta-section h2 {
+    color: #fff;
+  }
+  
+  .cta-section p {
+    color: #fff;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #FFCC00;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #FFA500;
+    transform: scale(1.05);
+  }

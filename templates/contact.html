@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block stylesheets %}
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="contact-container">
+    <h1 class="contact-title">Contact Us</h1>
+    
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-card">
+        <form class="contact-form" method="POST" action="{{ url_for('contact') }}">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-input" rows="4" placeholder="Your message" required></textarea>
+          </div>
+          
+          <button type="submit" class="form-button">Send Message</button>
+        </form>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="contact-card">
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fas fa-envelope info-icon"></i>
+            <div>
+              <h3 class="info-title">Email</h3>
+              <p class="info-text">contact@litterdetection.com</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <i class="fas fa-phone info-icon"></i>
+            <div>
+              <h3 class="info-title">Phone</h3>
+              <p class="info-text">+91 7397529410</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt info-icon"></i>
+            <div>
+              <h3 class="info-title">Address</h3>
+              <p class="info-text">V6M7+7P5, Semmancheri, Arasankalani, Sithalapakkam, Chennai, Tamil Nadu 600119, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  <!-- Page-specific JavaScript -->
+  <script src="{{ url_for('static', filename='contact.js') }}"></script>
+{% endblock %}
